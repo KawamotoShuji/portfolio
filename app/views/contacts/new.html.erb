@@ -1,0 +1,51 @@
+<div class="container-fluid">
+  <div class="wrapper">
+    <div class="row">
+      <div class="col-xs-12 col-md-8 col-md-offset-2">
+        <p id="notice"><%= notice %></p>
+        <%= form_for(@contact) do |f| %>
+        <% if @contact.errors.any? %>
+        <div id="error_explanation">
+          <!--# バリデーションエラーの件数を表示します。-->
+          <h2><%= @contact.errors.count %>件のエラーがあります。</h2>
+          <ul>
+            <% @contact.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+        <% end %>
+
+        <h1 class="name">
+          Contact
+        </h1>
+        <section class="inform">
+          <h1>連絡先</h1>
+        </section>
+        <section class="description container-fluid">
+          <div class="row">
+            <div class="col-xs-12 col-md-8 col-md-offset-2">
+              <p class="address">
+                Email:M01141329f@edu.teu.ac.jp<br>
+                TELL:080-2046-9445
+              </p>
+            </div>
+          </div>
+        </section>
+        <section class="renraku container-fluid">
+          ↓下記から直接連絡できます！↓
+        </section>
+        <div class="mail">
+        <%= f.label :name %>
+        <%= f.text_field :name, class: 'form-control' %>
+        <br>
+        <%= f.label :content %>
+        <%= f.text_field :content, class: 'form-control' %>
+        <br>
+        <%= f.submit '送信', class: 'btn btn-primary btn-block'%>
+        <% end %>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>

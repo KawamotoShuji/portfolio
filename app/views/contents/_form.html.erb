@@ -1,0 +1,15 @@
+<div class="container-fluid">
+  <div class="wrapper">
+    <div class="row">
+      <div class="col-xs-12 col-md-8 col-md-offset-2">
+        <%= form_for(@comment) do |f| %>
+        <%= select_tag 'note[point]', options_for_select(["InformBacket", "Shujigram", "3"]) %><br>
+        <%= f.label :content %>
+        <%= f.text_field :content, class: 'form-control' %>
+        <%= f.submit '投稿', class: 'btn btn-primary btn-block' %>
+        <% end %>
+        <%= link_to "コンテンツ一覧画面にもどる", contents_path %>
+      </div>
+    </div>
+  </div>
+</div>
